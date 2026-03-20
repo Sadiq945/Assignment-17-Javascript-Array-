@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Even Odd</title>
+<style>
+body{font-family:Arial;padding:20px}
+</style>
+</head>
+<body>
+
+<h2>Even Odd</h2>
+<input id="num">
+<button onclick="add()">Add</button>
+<button onclick="showEven()">Even</button>
+<button onclick="showOdd()">Odd</button>
+<button onclick="clearAll()">Clear</button>
+
+<p id="even"></p>
+<p id="odd"></p>
+
+<script>
+let arr=[]
+
+function add(){
+let n=parseInt(document.getElementById("num").value)
+if(!isNaN(n)){
+arr.push(n)
+}
+}
+
+function showEven(){
+document.getElementById("even").innerHTML=arr.filter(x=>x%2==0)
+}
+
+function showOdd(){
+document.getElementById("odd").innerHTML=arr.filter(x=>x%2!=0)
+}
+
+function clearAll(){
+arr=[]
+document.getElementById("even").innerHTML=""
+document.getElementById("odd").innerHTML=""
+}
+</script>
+
+</body>
+</html>

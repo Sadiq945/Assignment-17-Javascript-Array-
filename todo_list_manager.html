@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do</title>
+<style>
+body{font-family:Arial;padding:20px}
+button{margin:5px;padding:5px 10px}
+li{margin:5px 0}
+</style>
+</head>
+<body>
+
+<h2>To-Do List</h2>
+<input id="task">
+<button onclick="addTask()">Add Task</button>
+<button onclick="clearAll()">Clear All</button>
+
+<ul id="list"></ul>
+
+<script>
+let tasks=[]
+
+function addTask(){
+let t=document.getElementById("task").value
+if(t){
+tasks.push(t)
+display()
+}
+}
+
+function deleteTask(i){
+tasks.splice(i,1)
+display()
+}
+
+function clearAll(){
+tasks=[]
+display()
+}
+
+function display(){
+let out=""
+tasks.forEach((t,i)=>{
+out+=`<li>${t} <button onclick="deleteTask(${i})">Delete</button></li>`
+})
+document.getElementById("list").innerHTML=out
+}
+</script>
+
+</body>
+</html>

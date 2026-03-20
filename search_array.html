@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search</title>
+<style>
+body{font-family:Arial;padding:20px}
+</style>
+</head>
+<body>
+
+<h2>Search</h2>
+<input id="val">
+<button onclick="search()">Search</button>
+
+<p id="out"></p>
+
+<script>
+let arr=["audi","bmw","tata","kia"]
+
+function search(){
+let v=document.getElementById("val").value.toLowerCase()
+let found=arr.filter(x=>x.includes(v))
+document.getElementById("out").innerHTML=found.length?found.join(", "):"Not found"
+}
+</script>
+
+</body>
+</html>

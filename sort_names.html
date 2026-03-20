@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sort Names</title>
+<style>
+body{font-family:Arial;padding:20px}
+</style>
+</head>
+<body>
+
+<h2>Sort Names</h2>
+<input id="name">
+<button onclick="add()">Add</button>
+<button onclick="sortNames()">Sort</button>
+<button onclick="reset()">Reset</button>
+
+<p id="list"></p>
+
+<script>
+let arr=[]
+
+function add(){
+let n=document.getElementById("name").value
+if(n){
+arr.push(n)
+display()
+}
+}
+
+function sortNames(){
+arr.sort()
+display()
+}
+
+function reset(){
+arr=[]
+display()
+}
+
+function display(){
+document.getElementById("list").innerHTML=arr.join(", ")
+}
+</script>
+
+</body>
+</html>

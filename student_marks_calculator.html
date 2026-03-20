@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marks</title>
+<style>
+body{font-family:Arial;padding:20px}
+button{margin:5px}
+</style>
+</head>
+<body>
+
+<h2>Marks Calculator</h2>
+<input id="mark">
+<button onclick="add()">Add</button>
+<button onclick="calc()">Calculate</button>
+<button onclick="reset()">Reset</button>
+
+<p id="res"></p>
+
+<script>
+let arr=[]
+
+function add(){
+let m=parseFloat(document.getElementById("mark").value)
+if(!isNaN(m)){
+arr.push(m)
+}
+}
+
+function calc(){
+let sum=arr.reduce((a,b)=>a+b,0)
+let avg=sum/arr.length
+let max=Math.max(...arr)
+let min=Math.min(...arr)
+document.getElementById("res").innerHTML=
+"Total:"+sum+"<br>Avg:"+avg+"<br>Max:"+max+"<br>Min:"+min
+}
+
+function reset(){
+arr=[]
+document.getElementById("res").innerHTML=""
+}
+</script>
+
+</body>
+</html>
